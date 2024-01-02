@@ -1,0 +1,36 @@
+package com.sevenrmartsupermarket.tests;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.sevenrmartsupermarket.base.Base;
+import com.sevenrmartsupermarket.pages.HomePage;
+import com.sevenrmartsupermarket.pages.LoginPage;
+
+public class LoginTest extends Base
+{
+	LoginPage loginPage;
+	HomePage homepage;
+	@Test(groups = "smoke")
+	public void verifyLogin()
+	{
+		loginPage=new LoginPage(driver);
+		homepage=new HomePage(driver);
+		
+		String expectedProfileName="Admin";
+		
+		loginPage.login();
+		String actualProfileName=homepage.getProfileName();
+		Assert.assertEquals(actualProfileName, expectedProfileName);
+		
+	}
+
+	@Test(groups = "regression")
+	public void verifyInvalidLogin()
+	{
+		loginPage=new LoginPage(driver);
+		loginPage.login("qa","qa");
+		boolean actualresult=loginPage.checkErrorMessage("Alert!");
+		Assert.assertTrue(actualresult);
+	}
+}
