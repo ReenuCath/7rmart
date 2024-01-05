@@ -31,7 +31,6 @@ public class LoginTest extends Base
 	{
 		loginPage=new LoginPage(driver);
 		loginPage.login("qa","qa");
-		System.out.println();
 		boolean actualresult=loginPage.checkErrorMessage("Alert!");
 		Assert.assertTrue(actualresult);
 	}
