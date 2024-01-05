@@ -27,43 +27,43 @@ public class ManageDeliveryBoyPage
 
 	
 	@FindBy(xpath="//p[text()='Manage Delivery Boy']")
-	WebElement ManageDeliveryBoyElement;
+	private WebElement ManageDeliveryBoyElement;
 	@FindBy(xpath="(//i[@class='fas fa-edit'])[1]")
-	WebElement newDeliveryBoyElement;
+	private WebElement newDeliveryBoyElement;
 	@FindBy(xpath="//input[@id='name']")
-	WebElement nameElement;
+	private WebElement nameElement;
 	@FindBy(xpath="//input[@id='email']")
-	WebElement emailElement;
+	private WebElement emailElement;
 	@FindBy(xpath="//input[@id='phone']")
-	WebElement phoneNumberElement;
+	private WebElement phoneNumberElement;
 	@FindBy(xpath="//textarea[@id='address']")
-	WebElement addressElement;
+	private WebElement addressElement;
 	@FindBy(xpath="//input[@id='username']")
-	WebElement userNameElement;
+	private WebElement userNameElement;
 	@FindBy(xpath="//input[@id='password']")
-	WebElement passwordElement;
+	private WebElement passwordElement;
 	@FindBy(xpath="//button[text()='Save']")
-	WebElement saveElement;
+	private WebElement saveElement;
 	@FindBy(xpath="(//div[contains(string(),' Delivery Boy Details Created Successfully ')])[5]")
-	WebElement saveDeliveryBoyMessageElement;
+	private WebElement saveDeliveryBoyMessageElement;
 	@FindBy(xpath="//a[@class='btn btn-rounded btn-primary']")
-	WebElement searchElement;
+	private WebElement searchElement;
 	@FindBy(xpath="//table//tbody//tr//td[1]")
-	List<WebElement> searchDeliveryBoyNameElement;
+	private List<WebElement> searchDeliveryBoyNameElement;
 	@FindBy(xpath="(//div[contains(string(),' Delivery Boy Status Changed Successfully ')])[5]")
-	WebElement ChangeStatusMessageElement;
+	private WebElement ChangeStatusMessageElement;
 	@FindBy(xpath="//table//tbody//tr//td[1]")
-	List<WebElement> tableNameElement;
+	private List<WebElement> tableNameElement;
 	@FindBy(xpath="//input[@id='un']")
-	WebElement namesearchElement;
+	private WebElement namesearchElement;
 	@FindBy(xpath="//button[@type='submit']")
-	WebElement searchButtonElement;
+	private WebElement searchButtonElement;
 	@FindBy(xpath="//a[text()='Reset']")
-	WebElement resetSearchElement;
+	private WebElement resetSearchElement;
 	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tbody//tr[2]//span")
-	WebElement passwordTextElement;
+	private WebElement passwordTextElement;
 	@FindBy(xpath ="//table//tbody//tr//td[5]")
-	List<WebElement> tableUserNames;
+	private List<WebElement> tableUserNames;
 	
 	
 	public ManageDeliveryBoyPage(WebDriver driver)

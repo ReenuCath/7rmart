@@ -85,6 +85,8 @@ public class Base
 		 {
 			 screenshot.takeScreenShot(driver,itestresult.getName());
 		 }
+		 driver.close();
 	}
+	
 	
 }
