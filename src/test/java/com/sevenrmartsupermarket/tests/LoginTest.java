@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.sevenrmartsupermarket.base.Base;
+import com.sevenrmartsupermarket.base.DataProviders;
 import com.sevenrmartsupermarket.pages.HomePage;
 import com.sevenrmartsupermarket.pages.LoginPage;
 
@@ -30,7 +31,17 @@ public class LoginTest extends Base
 	{
 		loginPage=new LoginPage(driver);
 		loginPage.login("qa","qa");
+		System.out.println();
 		boolean actualresult=loginPage.checkErrorMessage("Alert!");
 		Assert.assertTrue(actualresult);
+	}
+	@Test(dataProvider="loginName",dataProviderClass =DataProviders.class)
+	public void verifyMultipleLogin(String userName,String password,String profileName)
+	{
+		loginPage=new LoginPage(driver);
+		String actualResult=loginPage.multipleLogin(userName, password, profileName);
+		loginPage.login(userName, password);
+		String expectedResult=profileName;
+		Assert.assertEquals(actualResult, expectedResult);
 	}
 }
